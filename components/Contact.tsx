@@ -19,7 +19,7 @@ export default function Contact() {
       icon: Linkedin,
       label: 'LinkedIn',
       sub: 'Connect professionally',
-      href: 'https://linkedin.com/in/prashant-karna',
+      href="https://www.linkedin.com/in/prashantkarna/",
       color: 'hover:border-blue-500/40 hover:bg-blue-500/5',
       iconColor: 'text-blue-400',
     },
