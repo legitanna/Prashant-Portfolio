@@ -9,9 +9,14 @@ const caseStudies = [
     category: 'Human Resources',
     icon: Users,
     tags: ['Power BI', 'HR Data', 'Attrition'],
-    highlights: ['1,470 employees tracked', '16.1% attrition rate analyzed', 'Salary & age segmentation', 'Job role breakdown'],
+    highlights: [
+      'Tracked 1,470 employees across departments',
+      'Analyzed 16.1% overall attrition rate',
+      'Identified attrition patterns by age, salary and job role',
+      'Enabled HR teams to spot high-risk workforce segments',
+    ],
     description:
-      'Built a comprehensive HR analytics dashboard analyzing employee attrition, demographics, and salary distributions across departments. Enabled HR leadership to identify at-risk segments and reduce turnover.',
+      'Developed an interactive HR analytics dashboard to help HR leaders monitor employee attrition, workforce demographics, salary distribution and job-role level risk areas. The report converts raw HR data into clear decision points for retention planning.',
     image: '/case-studies/hr-analytics/HR_Analytics_Dashboard_page-0001_(1).jpg',
     isImage: true,
     color: 'from-blue-600/10 to-blue-800/5',
@@ -25,9 +30,14 @@ const caseStudies = [
     category: 'Financial Analytics',
     icon: CreditCard,
     tags: ['Power BI', 'Finance', 'Revenue'],
-    highlights: ['$55M revenue tracked', '$8M interest analyzed', '45M transactions processed', 'Monthly trend analysis'],
+    highlights: [
+      '$55M revenue analyzed',
+      '$8M interest tracked',
+      '45M transactions processed',
+      'Monthly performance and category trends monitored',
+    ],
     description:
-      'Designed an end-to-end credit card transaction report covering revenue by category, spending patterns, and monthly trends. Delivered insights enabling targeted credit limit adjustments and portfolio growth.',
+      'Built a Power BI transaction analysis report to track revenue, interest, transaction volume and acquisition performance. The dashboard helps users understand spending behavior, identify category-level trends and monitor financial performance over time.',
     pdfLink: '/case-studies/credit-card-analytics/credit_card_project_(2).pdf',
     isImage: false,
     previewStats: [
@@ -47,9 +57,14 @@ const caseStudies = [
     category: 'Customer Analytics',
     icon: TrendingUp,
     tags: ['Power BI', 'Segmentation', 'CRM'],
-    highlights: ['Customer segmentation by job', 'Income & education analysis', 'Marital status revenue split', 'Dependent count impact'],
+    highlights: [
+      'Segmented customers by job, income and education',
+      'Analyzed revenue by marital status and dependent count',
+      'Compared customer behavior across ownership categories',
+      'Supported targeted marketing and retention decisions',
+    ],
     description:
-      'Created a customer analytics dashboard revealing behavioral patterns across income segments, education levels, and demographics, enabling targeted marketing and customer retention strategies.',
+      'Created a customer analytics dashboard focused on customer profiling, segmentation and revenue contribution. The report highlights how income level, education, job type and family profile influence customer value and portfolio performance.',
     pdfLink: '/case-studies/customer-analytics/credit_card_project_(1).pdf',
     isImage: false,
     previewStats: [
@@ -69,9 +84,14 @@ const caseStudies = [
     category: 'Market Research',
     icon: DollarSign,
     tags: ['Power BI', 'Salary Data', 'Global'],
-    highlights: ['$137.57K avg salary', '3,755 employees analyzed', '10+ countries compared', 'Remote work trend insights'],
+    highlights: [
+      'Analyzed 3,755 global salary records',
+      'Compared compensation across 10+ countries',
+      'Benchmarked salary by experience and company size',
+      'Explored remote-work and job-title salary patterns',
+    ],
     description:
-      'Analyzed global data science compensation data across job titles, experience levels, company sizes, and remote ratios. Provided benchmarking insights for hiring managers and job seekers.',
+      'Designed a salary benchmarking dashboard using global data science compensation data. The report compares salaries by job title, experience level, company size, country and remote ratio to support career research and hiring-market analysis.',
     pdfLink: '/case-studies/data-science-salary-analysis/Data_Science_Salary_Analysis.pdf',
     isImage: false,
     previewStats: [
@@ -87,100 +107,3 @@ const caseStudies = [
     accent: 'text-amber-400',
   },
 ];
-
-export default function CaseStudies() {
-  return (
-    <section id="case-studies" className="section-padding">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-xs font-medium text-blue-400 tracking-widest uppercase mb-3">Portfolio</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Featured Case Studies
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Real-world Power BI projects that transformed raw data into strategic business decisions.
-          </p>
-        </div>
-
-        {/* Cards grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {caseStudies.map((cs, i) => (
-            <div
-              key={cs.title}
-              className={`glass glass-hover rounded-2xl overflow-hidden border ${cs.border} bg-gradient-to-br ${cs.color} flex flex-col`}
-            >
-              {/* Image or stats preview */}
-              {cs.isImage && cs.image ? (
-                <div className="relative h-48 overflow-hidden bg-[#0a1628]">
-                  <Image
-                    src={cs.image}
-                    alt={cs.title}
-                    fill
-                    className="object-cover object-top"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/80 via-transparent to-transparent" />
-                </div>
-              ) : cs.previewStats ? (
-                <div className="grid grid-cols-4 gap-0 border-b border-white/5">
-                  {cs.previewStats.map((stat) => (
-                    <div key={stat.label} className="p-4 text-center border-r border-white/5 last:border-r-0">
-                      <div className={`text-lg font-bold ${cs.accent}`}>{stat.value}</div>
-                      <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className={`w-7 h-7 rounded-lg ${cs.iconBg} flex items-center justify-center`}>
-                        <cs.icon className={`w-3.5 h-3.5 ${cs.iconColor}`} />
-                      </div>
-                      <span className={`text-xs font-medium ${cs.accent}`}>{cs.category}</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-white">{cs.title}</h3>
-                  </div>
-                </div>
-
-                <p className="text-sm text-slate-400 leading-relaxed mb-4">{cs.description}</p>
-
-                {/* Highlights */}
-                <ul className="space-y-1.5 mb-5 flex-1">
-                  {cs.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-2 text-xs text-slate-400">
-                      <span className={`w-1 h-1 rounded-full ${cs.iconBg} ${cs.iconColor} flex-shrink-0`} style={{ background: 'currentColor' }} />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Tags + CTA */}
-                <div className="flex items-center justify-between mt-auto">
-                  <div className="flex gap-2">
-                    {cs.tags.map((t) => (
-                      <span key={t} className="px-2 py-0.5 text-xs bg-white/5 text-slate-400 rounded-md">{t}</span>
-                    ))}
-                  </div>
-                  {cs.pdfLink && (
-                    <a
-                      href={cs.pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-1.5 text-xs font-medium ${cs.accent} hover:underline`}
-                    >
-                      View Dashboard <ExternalLink className="w-3 h-3" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
