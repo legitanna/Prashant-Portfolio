@@ -107,3 +107,98 @@ const caseStudies = [
     accent: 'text-amber-400',
   },
 ];
+
+export default function CaseStudies() {
+  return (
+    <section id="case-studies" className="section-padding">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-xs font-medium text-blue-400 tracking-widest uppercase mb-3">Portfolio</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Featured Case Studies
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Real-world Power BI projects that transformed raw data into strategic business decisions.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {caseStudies.map((cs) => (
+            <div
+              key={cs.title}
+              className={`glass glass-hover rounded-2xl overflow-hidden border ${cs.border} bg-gradient-to-br ${cs.color} flex flex-col`}
+            >
+              {cs.isImage && cs.image ? (
+                <div className="relative h-48 overflow-hidden bg-[#0a1628]">
+                  <Image
+                    src={cs.image}
+                    alt={cs.title}
+                    fill
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/80 via-transparent to-transparent" />
+                </div>
+              ) : cs.previewStats ? (
+                <div className="grid grid-cols-4 gap-0 border-b border-white/5">
+                  {cs.previewStats.map((stat) => (
+                    <div key={stat.label} className="p-4 text-center border-r border-white/5 last:border-r-0">
+                      <div className={`text-lg font-bold ${cs.accent}`}>{stat.value}</div>
+                      <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className={`w-7 h-7 rounded-lg ${cs.iconBg} flex items-center justify-center`}>
+                        <cs.icon className={`w-3.5 h-3.5 ${cs.iconColor}`} />
+                      </div>
+                      <span className={`text-xs font-medium ${cs.accent}`}>{cs.category}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white">{cs.title}</h3>
+                  </div>
+                </div>
+
+                <p className="text-sm text-slate-400 leading-relaxed mb-4">{cs.description}</p>
+
+                <ul className="space-y-1.5 mb-5 flex-1">
+                  {cs.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2 text-xs text-slate-400">
+                      <span
+                        className={`w-1 h-1 rounded-full ${cs.iconBg} ${cs.iconColor} flex-shrink-0`}
+                        style={{ background: 'currentColor' }}
+                      />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center justify-between mt-auto">
+                  <div className="flex gap-2 flex-wrap">
+                    {cs.tags.map((t) => (
+                      <span key={t} className="px-2 py-0.5 text-xs bg-white/5 text-slate-400 rounded-md">{t}</span>
+                    ))}
+                  </div>
+
+                  {cs.pdfLink && (
+                    <a
+                      href={cs.pdfLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-1.5 text-xs font-medium ${cs.accent} hover:underline whitespace-nowrap`}
+                    >
+                      View Dashboard <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
