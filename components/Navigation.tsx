@@ -67,7 +67,7 @@ export default function Navigation() {
               href="#contact"
               className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-all"
             >
-              Hire Me
+              Let's Connect
             </a>
           </div>
 
@@ -102,7 +102,7 @@ export default function Navigation() {
                 onClick={() => setMobileOpen(false)}
                 className="px-4 py-2.5 text-sm font-medium text-center text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-all"
               >
-                Hire Me
+                Let's Connect
               </a>
             </div>
           </div>
