@@ -86,10 +86,9 @@ const skillCategories = [
 function SkillBar({ name, level, color }: { name: string; level: number; color: string }) {
   return (
     <div>
-      <div className="flex justify-between items-center mb-1.5">
-        <span className="text-sm text-slate-300">{name}</span>
-        <span className={`text-xs font-medium ${color}`}>{level}%</span>
-      </div>
+      <div className="flex items-center mb-1.5">
+  <span className="text-sm text-slate-300">{name}</span>
+</div>
       <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full transition-all duration-1000 bg-gradient-to-r ${
