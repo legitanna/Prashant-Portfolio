@@ -9,7 +9,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:prashantkarna@email.com?subject=Portfolio Inquiry from ${formState.name}&body=${encodeURIComponent(formState.message + '\n\nFrom: ' + formState.name + '\nEmail: ' + formState.email)}`;
+    const mailtoLink = `mailto:prashantkarna6@gmail.com?subject=Portfolio Inquiry from ${formState.name}&body=${encodeURIComponent(formState.message + '\n\nFrom: ' + formState.name + '\nEmail: ' + formState.email)}`;
     window.location.href = mailtoLink;
     setSubmitted(true);
   };
@@ -35,7 +35,7 @@ export default function Contact() {
       icon: Mail,
       label: 'Email',
       sub: 'Drop me a message',
-      href: 'mailto:prashantkarna@email.com',
+      href: 'mailto:prashantkarna6@gmail.com',
       color: 'hover:border-cyan-500/40 hover:bg-cyan-500/5',
       iconColor: 'text-cyan-400',
     },
@@ -65,7 +65,7 @@ export default function Contact() {
               <p className="text-slate-400 text-sm mb-4">Data Analyst · Power BI Developer · 7+ Years Experience</p>
               <div className="flex items-center gap-2 text-xs text-slate-500">
                 <MapPin className="w-3.5 h-3.5" />
-                <span>India · Open to Remote & Hybrid</span>
+                <span>Ahmedabad, India · Open to Remote, Hybrid & Onsite</span>
               </div>
             </div>
 
