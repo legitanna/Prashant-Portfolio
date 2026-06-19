@@ -39,8 +39,8 @@ const caseStudies = [
     description:
       'Built a Power BI transaction analysis report to track revenue, interest, transaction volume and acquisition performance. The dashboard helps users understand spending behavior, identify category-level trends and monitor financial performance over time.',
     image: '/case-studies/credit-card-analytics/credit-card-transaction.jpg',
-pdfLink: '/case-studies/credit-card-analytics/credit_card_project_(2).pdf',
-isImage: true,
+    pdfLink: '/case-studies/credit-card-analytics/credit_card_project_(2).pdf',
+    isImage: true,
     color: 'from-cyan-600/10 to-cyan-800/5',
     border: 'border-cyan-500/15',
     iconBg: 'bg-cyan-500/15',
@@ -61,8 +61,8 @@ isImage: true,
     description:
       'Created a customer analytics dashboard focused on customer profiling, segmentation and revenue contribution. The report highlights how income level, education, job type and family profile influence customer value and portfolio performance.',
     image: '/case-studies/customer-analytics/credit-card-customer.jpg',
-pdfLink: '/case-studies/customer-analytics/credit_card_project_(1).pdf',
-isImage: true,
+    pdfLink: '/case-studies/customer-analytics/credit_card_project_(1).pdf',
+    isImage: true,
     color: 'from-green-600/10 to-green-800/5',
     border: 'border-green-500/15',
     iconBg: 'bg-green-500/15',
@@ -83,8 +83,8 @@ isImage: true,
     description:
       'Designed a salary benchmarking dashboard using global data science compensation data. The report compares salaries by job title, experience level, company size, country and remote ratio to support career research and hiring-market analysis.',
     image: '/case-studies/data-science-salary-analysis/data-science-salary.jpg',
-pdfLink: '/case-studies/data-science-salary-analysis/Data_Science_Salary_Analysis.pdf',
-isImage: true,
+    pdfLink: '/case-studies/data-science-salary-analysis/Data_Science_Salary_Analysis.pdf',
+    isImage: true,
     color: 'from-amber-600/10 to-amber-800/5',
     border: 'border-amber-500/15',
     iconBg: 'bg-amber-500/15',
@@ -122,15 +122,6 @@ export default function CaseStudies() {
                     className="object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/80 via-transparent to-transparent" />
-                </div>
-              ) : cs.previewStats ? (
-                <div className="grid grid-cols-4 gap-0 border-b border-white/5">
-                  {cs.previewStats.map((stat) => (
-                    <div key={stat.label} className="p-4 text-center border-r border-white/5 last:border-r-0">
-                      <div className={`text-lg font-bold ${cs.accent}`}>{stat.value}</div>
-                      <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
-                    </div>
-                  ))}
                 </div>
               ) : null}
 
