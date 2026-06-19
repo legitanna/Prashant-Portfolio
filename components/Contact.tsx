@@ -7,12 +7,35 @@ export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:prashantkarna6@gmail.com?subject=Portfolio Inquiry from ${formState.name}&body=${encodeURIComponent(formState.message + '\n\nFrom: ' + formState.name + '\nEmail: ' + formState.email)}`;
-    window.location.href = mailtoLink;
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const response = await fetch(
+    "https://formspree.io/f/mgobgvld",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: formState.name,
+        email: formState.email,
+        message: formState.message,
+      }),
+    }
+  );
+
+  if (response.ok) {
     setSubmitted(true);
-  };
+
+    setFormState({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
+};
 
   const socials = [
     {
