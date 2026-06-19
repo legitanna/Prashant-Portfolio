@@ -7,7 +7,6 @@ import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
 import Learning from '@/components/Learning';
 import GitHubProjects from '@/components/GitHubProjects';
-import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -24,7 +23,6 @@ export default function Home() {
         <Skills />
         <Learning />
         <GitHubProjects />
-        <Certifications />
         <Contact />
       </main>
       <Footer />
