@@ -18,7 +18,8 @@ const caseStudies = [
     description:
       'Developed an interactive HR analytics dashboard to help HR leaders monitor employee attrition, workforce demographics, salary distribution and job-role level risk areas. The report converts raw HR data into clear decision points for retention planning.',
     image: '/case-studies/hr-analytics/HR_Analytics_Dashboard_page-0001_(1).jpg',
-    isImage: true,
+pdfLink: '/case-studies/hr-analytics/HR_Analytics_Dashboard.pdf',
+isImage: true,
     color: 'from-blue-600/10 to-blue-800/5',
     border: 'border-blue-500/15',
     iconBg: 'bg-blue-500/15',
