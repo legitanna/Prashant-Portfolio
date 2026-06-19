@@ -121,8 +121,10 @@ export default function Contact() {
                 <div className="w-14 h-14 rounded-full bg-green-500/15 border border-green-500/30 flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-green-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Message Prepared!</h3>
-                <p className="text-sm text-slate-400">Your email client should open with the message pre-filled.</p>
+                <h3 className="text-lg font-bold text-white mb-2">Message Sent Successfully!</h3>
+<p className="text-sm text-slate-400">
+  Thank you for reaching out. I&apos;ll get back to you as soon as possible.
+</p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-4 text-sm text-blue-400 hover:underline"
