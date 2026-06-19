@@ -49,7 +49,7 @@ export default function Contact() {
           <p className="text-xs font-medium text-blue-400 tracking-widest uppercase mb-3">Get In Touch</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Let&apos;s Work Together</h2>
           <p className="text-slate-400 max-w-xl mx-auto">
-            Open to Data Analyst and Power BI Developer opportunities. Let&apos;s discuss how I can add value to your team.
+            Open to Data Analyst, Power BI Developer and Business Intelligence roles where I can help teams turn data into clear, decision-ready reporting.
           </p>
         </div>
 
