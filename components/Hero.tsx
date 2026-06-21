@@ -79,10 +79,10 @@ export default function Hero() {
                   key={card.label}
                   className={`absolute glass rounded-xl px-3 py-2 flex items-center gap-2 animate-float ${card.delay} ${
                     i === 0
-                      ? '-top-4 -right-4'
-                      : i === 1
-                      ? '-bottom-2 -right-8'
-                      : '-top-4 -left-8'
+  ? '-top-4 -right-4'
+  : i === 1
+  ? 'bottom-12 -right-8'
+  : '-top-4 -left-8'
                   }`}
                   style={{ animationDelay: `${i * 0.8}s` }}
                 >
