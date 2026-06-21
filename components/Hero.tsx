@@ -81,7 +81,7 @@ export default function Hero() {
                     i === 0
   ? '-top-4 -right-4'
   : i === 1
-  ? 'bottom-12 -right-8'
+  ? 'bottom-1 -right-8'
   : '-top-4 -left-8'
                   }`}
                   style={{ animationDelay: `${i * 0.8}s` }}
