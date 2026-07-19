@@ -21,7 +21,7 @@ const experiences = [
     tech: ['Power BI', 'Python', 'SQL', 'Excel'],
   },
   {
-    company: 'Shivaji Infotech',
+    company: 'OrigaBee',
     role: 'Data Analyst',
     period: 'Aug 2024 – Jun 2025',
     location: 'India',
