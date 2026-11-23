@@ -14,17 +14,18 @@ export default function Footer() {
                 Prashant Karna
               </div>
               <div className="text-xs text-slate-500">
-                Data Analyst · Power BI Developer · SQL · Python · Power BI
+                Data Analyst · Power BI · SQL · Python
               </div>
             </div>
           </div>
 
           <nav className="flex items-center gap-6 text-xs text-slate-500">
             {[
-              { label: 'About', href: '#about' },
-              { label: 'Case Studies', href: '#case-studies' },
-              { label: 'Experience', href: '#experience' },
-              { label: 'Contact', href: '#contact' },
+              { label: 'Guides', href: '/guides' },
+              { label: 'About', href: '/#about' },
+              { label: 'Work', href: '/#case-studies' },
+              { label: 'Privacy', href: '/privacy' },
+              { label: 'Contact', href: '/#contact' },
             ].map((link) => (
               <a
                 key={link.href}

@@ -1,6 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import CookieConsent from '@/components/CookieConsent';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -37,9 +39,22 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className={`${inter.className} bg-[#070d1a] text-white antialiased`}>{children}</body>
+      <body className={`${inter.className} bg-[#070d1a] text-white antialiased`}>
+        {children}
+        <CookieConsent />
+        {adsClient && (
+          <Script
+            async
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`}
+          />
+        )}
+      </body>
     </html>
   );
 }

@@ -4,12 +4,11 @@ import { useState, useEffect } from 'react';
 import { Menu, X, BarChart3 } from 'lucide-react';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#github' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Guides', href: '/guides' },
+  { label: 'About', href: '/#about' },
+  { label: 'Work', href: '/#case-studies' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navigation() {
@@ -33,7 +32,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
               <BarChart3 className="w-4 h-4 text-blue-400" />
             </div>
@@ -64,7 +63,7 @@ export default function Navigation() {
               Resume
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-all"
             >
               Let's Connect
@@ -98,7 +97,7 @@ export default function Navigation() {
             ))}
             <div className="pt-3 flex flex-col gap-2">
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileOpen(false)}
                 className="px-4 py-2.5 text-sm font-medium text-center text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-all"
               >
