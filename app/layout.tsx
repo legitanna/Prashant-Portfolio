@@ -74,18 +74,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${fraunces.variable} ${mono.variable}`}
     >
       <body className={`${inter.className} min-h-screen antialiased`}>
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`}
+          crossOrigin="anonymous"
+        />
         <SiteNav />
         <main>{children}</main>
         <SiteFooter />
         <CookieConsent />
-        {adsClient && (
-          <Script
-            async
-            strategy="beforeInteractive"
-            crossOrigin="anonymous"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`}
-          />
-        )}
       </body>
     </html>
   );
