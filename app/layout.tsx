@@ -65,7 +65,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  const adsClient =
+    process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? 'ca-pub-3226089469065667';
 
   return (
     <html
