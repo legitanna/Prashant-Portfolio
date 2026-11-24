@@ -23,7 +23,7 @@ export default function SiteFooter() {
               { label: 'Guides', href: '/guides' },
               { label: 'Work', href: '/projects' },
               { label: 'About', href: '/about' },
-              { label: 'Contact', href: '/contact' },
+              { label: "Let's connect", href: '/contact' },
               { label: 'Privacy', href: '/privacy' },
             ].map((l) => (
               <li key={l.href}>

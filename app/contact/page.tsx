@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: "Let's connect",
   description:
-    'Contact Prashant Karna about data analyst roles, MIS reporting builds, Power BI dashboards or Excel automation work.',
+    'Contact Prashant Karna about a freelance build: MIS reporting packs, FMS flow management, IMS inventory systems, checklists or Power BI and Looker Studio dashboards.',
   alternates: { canonical: 'https://prashantkarna.com/contact' },
 };
 
@@ -21,14 +21,13 @@ export default function ContactPage() {
           <div className="flex items-center gap-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-[#2f6b4f]" />
             <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#2f6b4f]">
-              Available for roles and short builds
+              Open to freelance builds
             </span>
           </div>
 
           <p className="mt-5 max-w-[42ch] text-[16px] leading-relaxed text-[#3a3f46]">
-            Data analyst and MIS roles, or a contained reporting project: a monthly pack, a
-            stock or ledger report, a dashboard that needs to be finished rather than
-            started.
+            A monthly reporting pack, an inventory or flow system, a dashboard that needs
+            finishing rather than starting. Short, scoped work, delivered around my job.
           </p>
 
           <dl className="mt-8 border-t border-[#e2ddd4]">

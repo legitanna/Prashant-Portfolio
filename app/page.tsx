@@ -41,13 +41,14 @@ export default function Home() {
             <p className="eyebrow">Data analyst · Ahmedabad, India</p>
 
             <h1 className="display mt-6 max-w-[20ch] text-[2.6rem] sm:text-[3.4rem]">
-              I build the FMS, IMS and dashboards a trading business runs on.
+              I build the FMS, IMS and dashboards that keep a business running.
             </h1>
 
             <p className="mt-7 max-w-[54ch] text-[17px] leading-relaxed text-[#4a4f56]">
-              MIS and business systems, built inside Google Sheets, Apps Script and Looker
-              Studio, with Power BI and SQL where the data outgrows a spreadsheet. Flow
-              management, inventory, employee checklists and the reporting underneath them.
+              Flow management, inventory and reporting systems, built in Google Sheets, Apps
+              Script and Looker Studio, with Power BI and SQL where the data outgrows a
+              spreadsheet. Banking, pharmaceuticals, exhibitions, campaign analytics: the
+              industry changes, the problem does not. The number nobody trusts.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
@@ -222,19 +223,19 @@ export default function Home() {
 
       {/* Availability */}
       <section className="wrap py-14">
-        <div className="border border-[#e2ddd4] bg-white/40 px-6 py-8 sm:px-10 sm:py-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="eyebrow">Availability</p>
-              <p className="mt-3 max-w-[46ch] text-[17px] leading-relaxed text-[#2b2f35]">
-                Open to data analyst and MIS roles, and to short reporting builds for
-                trading and distribution businesses.
-              </p>
-            </div>
-            <Link href="/contact" className="btn-ghost shrink-0">
-              Get in touch
-            </Link>
-          </div>
+        <div className="border-t border-[#e2ddd4] pt-10">
+          <p className="eyebrow">Work with me</p>
+          <p className="mt-4 max-w-[52ch] text-[19px] leading-relaxed text-[#2b2f35]">
+            Building a reporting system and not sure where to start? I take on a small number
+            of freelance builds alongside my work.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center gap-2 border-b border-[#14161a] pb-1 text-[15px] text-[#14161a] transition-colors hover:border-[#24405e] hover:text-[#24405e]"
+          >
+            Let&apos;s connect
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
     </>

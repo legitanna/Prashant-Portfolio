@@ -8,8 +8,9 @@ const links = [
   { label: 'Guides', href: '/guides' },
   { label: 'Work', href: '/projects' },
   { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
 ];
+
+const cta = { label: "Let's connect", href: '/contact' };
 
 export default function SiteNav() {
   const pathname = usePathname();
@@ -46,14 +47,29 @@ export default function SiteNav() {
               {link.label}
             </Link>
           ))}
+
           <a
             href="/Prashant_Karna_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-[#e2ddd4] px-3.5 py-1.5 text-[13px] text-[#14161a] transition-colors hover:border-[#14161a]"
+            className="text-[13.5px] text-[#5f646c] transition-colors hover:text-[#14161a]"
           >
             Résumé
           </a>
+
+          <Link
+            href={cta.href}
+            className={`inline-flex items-center gap-1.5 px-4 py-2 text-[13.5px] transition-colors ${
+              isActive(cta.href)
+                ? 'bg-[#24405e] text-[#fbf9f5]'
+                : 'bg-[#14161a] text-[#fbf9f5] hover:bg-[#24405e]'
+            }`}
+          >
+            {cta.label}
+            <span aria-hidden="true" className="text-[12px]">
+              →
+            </span>
+          </Link>
         </nav>
 
         <button
@@ -92,10 +108,18 @@ export default function SiteNav() {
               href="/Prashant_Karna_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="py-3 text-sm text-[#24405e] underline decoration-[#c9c2b6] underline-offset-4"
+              className="border-b border-[#efeae2] py-3 text-sm text-[#2b2f35]"
             >
               Résumé (PDF)
             </a>
+            <Link
+              href={cta.href}
+              onClick={() => setOpen(false)}
+              className="mt-3 mb-2 flex items-center justify-between bg-[#14161a] px-4 py-3 text-sm text-[#fbf9f5]"
+            >
+              {cta.label}
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       )}
