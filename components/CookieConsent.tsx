@@ -20,7 +20,7 @@ export default function CookieConsent() {
     try {
       localStorage.setItem(KEY, value);
     } catch {
-      // Storage blocked; the banner simply closes for this session.
+      // Storage blocked; the banner closes for this session.
     }
     setVisible(false);
   };
@@ -28,26 +28,26 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-[60] sm:left-auto sm:right-6 sm:max-w-sm">
-      <div className="glass rounded-2xl p-5 border border-white/10 shadow-xl shadow-black/40">
-        <p className="text-sm text-slate-300 leading-relaxed">
-          This site uses cookies to measure traffic and, once ads are switched on, to show relevant
-          advertising. You can accept all or keep only what the site needs to work.
+    <div className="fixed inset-x-3 bottom-3 z-50 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-[380px]">
+      <div className="border border-[#14161a] bg-[#14161a] px-5 py-4 text-[#efeae2]">
+        <p className="text-[13px] leading-relaxed">
+          Cookies measure traffic and, once ads are switched on, show relevant advertising. Accept
+          all, or keep only what the site needs.
         </p>
-        <div className="flex items-center gap-2 mt-4">
+        <div className="mt-4 flex items-center gap-2">
           <button
             onClick={() => choose('all')}
-            className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors"
+            className="bg-[#fbf9f5] px-3.5 py-2 text-[12.5px] font-medium text-[#14161a] transition-colors hover:bg-white"
           >
             Accept all
           </button>
           <button
             onClick={() => choose('essential')}
-            className="px-4 py-2 text-sm font-medium text-slate-300 border border-white/10 hover:bg-white/5 rounded-lg transition-colors"
+            className="border border-[#4a4f56] px-3.5 py-2 text-[12.5px] text-[#c9c2b6] transition-colors hover:border-[#8a8f97]"
           >
             Essential only
           </button>
-          <Link href="/privacy" className="ml-auto text-xs text-slate-500 hover:text-slate-300">
+          <Link href="/privacy" className="ml-auto text-[11px] text-[#8a8f97] hover:text-[#c9c2b6]">
             Policy
           </Link>
         </div>

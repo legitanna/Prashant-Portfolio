@@ -1,39 +1,60 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
 import CookieConsent from '@/components/CookieConsent';
+import SiteNav from '@/components/SiteNav';
+import SiteFooter from '@/components/SiteFooter';
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
   display: 'swap',
 });
 
-const jetbrains = JetBrains_Mono({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-jetbrains',
+  weight: ['400', '500', '600'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-mono',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://prashantkarna.com'),
-  title: 'Prashant Karna | Data Analyst & Power BI Developer',
+  title: {
+    default: 'Prashant Karna — MIS reporting and analytics',
+    template: '%s | Prashant Karna',
+  },
   description:
-    'Data Analyst with 7+ years of experience building Power BI dashboards, automating reporting workflows, and delivering actionable insights through SQL, Python and Excel.',
-  keywords: ['Data Analyst', 'Power BI Developer', 'SQL', 'Python', 'DAX', 'Dashboard', 'Analytics'],
+    'Data analyst with seven years in MIS reporting, Power BI and Power Query. Guides on monthly reporting for trading and operations teams, plus selected projects.',
+  keywords: [
+    'MIS reporting',
+    'Power BI',
+    'Power Query',
+    'Excel reporting',
+    'data analyst',
+    'textile trading reports',
+  ],
   authors: [{ name: 'Prashant Karna' }],
   openGraph: {
-    title: 'Prashant Karna | Data Analyst & Power BI Developer',
-    description: 'Turning Data Into Decisions. 7+ years of analytics experience.',
+    title: 'Prashant Karna — MIS reporting and analytics',
+    description:
+      'Seven years in MIS and BI. Guides on monthly reporting, and the dashboards behind them.',
     type: 'website',
     url: 'https://prashantkarna.com',
     images: [{ url: '/images/Linkedin_Pic.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prashant Karna | Data Analyst',
-    description: 'Turning Data Into Decisions.',
+    title: 'Prashant Karna — MIS reporting and analytics',
+    description: 'Guides on monthly reporting, and the dashboards behind them.',
     images: [{ url: '/images/Linkedin_Pic.png' }],
   },
 };
@@ -42,9 +63,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className={`${inter.className} bg-[#070d1a] text-white antialiased`}>
-        {children}
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} ${mono.variable}`}
+    >
+      <body className={`${inter.className} min-h-screen antialiased`}>
+        <SiteNav />
+        <main>{children}</main>
+        <SiteFooter />
         <CookieConsent />
         {adsClient && (
           <Script

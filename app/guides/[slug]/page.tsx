@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import AdSlot from '@/components/AdSlot';
 import { getAllGuides, getGuide, getGuideSlugs } from '@/lib/guides';
 
@@ -16,7 +14,7 @@ export function generateMetadata({ params }: Params): Metadata {
   const guide = getGuide(params.slug);
   if (!guide) return { title: 'Guide not found' };
   return {
-    title: `${guide.title} | Prashant Karna`,
+    title: guide.title,
     description: guide.description,
     keywords: guide.keywords,
     alternates: { canonical: `https://prashantkarna.com/guides/${guide.slug}` },
@@ -36,9 +34,7 @@ export default function GuidePage({ params }: Params) {
   const guide = getGuide(params.slug);
   if (!guide) notFound();
 
-  const related = getAllGuides()
-    .filter((g) => g.slug !== guide.slug)
-    .slice(0, 2);
+  const related = getAllGuides().filter((g) => g.slug !== guide.slug).slice(0, 2);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -63,77 +59,82 @@ export default function GuidePage({ params }: Params) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navigation />
-      <main className="pt-28 pb-24 px-4 sm:px-6 lg:px-8">
-        <article className="max-w-3xl mx-auto">
-          <nav className="text-xs text-slate-500 mb-6">
-            <Link href="/guides" className="hover:text-slate-300">
-              Guides
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-slate-400">{guide.category}</span>
-          </nav>
 
-          <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
-            {guide.title}
-          </h1>
+      <article className="wrap-narrow py-12 sm:py-14">
+        <nav className="mb-8 font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#8a8f97]">
+          <Link href="/guides" className="hover:text-[#14161a]">
+            Guides
+          </Link>
+          <span className="mx-2 text-[#c9c2b6]">/</span>
+          <span>{guide.category}</span>
+        </nav>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500 mb-10 pb-8 border-b border-white/5">
-            <span className="text-slate-300">Prashant Karna</span>
-            <span>Data Analyst, 7 years in MIS and BI</span>
-            <time dateTime={guide.date}>
-              {new Date(guide.date).toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </time>
-            <span>{guide.readMinutes} min read</span>
-          </div>
+        <h1 className="display text-[2.1rem] leading-[1.12] sm:text-[2.6rem]">{guide.title}</h1>
 
-          <div className="prose-article" dangerouslySetInnerHTML={{ __html: guide.html }} />
+        <p className="mt-6 max-w-[58ch] text-[17px] leading-relaxed text-[#5f646c]">
+          {guide.description}
+        </p>
 
-          <div className="mt-14">
-            <AdSlot slot="article-footer" />
-          </div>
+        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-[#e2ddd4] py-3 font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#8a8f97]">
+          <span className="text-[#14161a]">Prashant Karna</span>
+          <span>Data analyst</span>
+          <time dateTime={guide.date}>
+            {new Date(guide.date).toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </time>
+          <span>{guide.readMinutes} min read</span>
+        </div>
 
-          <div className="mt-16 glass rounded-2xl p-6">
-            <h2 className="text-lg font-semibold text-white mb-2">Need this built in your business?</h2>
-            <p className="text-sm text-slate-400 mb-4">
-              I build monthly reporting packs, Power BI dashboards and Power Query pipelines for
-              small finance and operations teams. Send the messy file and a description of what you
-              need to see each month.
-            </p>
-            <Link
-              href="/#contact"
-              className="inline-flex px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors"
-            >
-              Get in touch
-            </Link>
-          </div>
+        <div className="mt-10 prose-article" dangerouslySetInnerHTML={{ __html: guide.html }} />
 
-          {related.length > 0 && (
-            <div className="mt-16">
-              <h2 className="text-sm font-medium text-slate-400 uppercase tracking-widest mb-4">
-                More guides
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {related.map((g) => (
-                  <Link
-                    key={g.slug}
-                    href={`/guides/${g.slug}`}
-                    className="glass glass-hover rounded-xl p-5"
-                  >
-                    <span className="text-[11px] text-slate-500">{g.category}</span>
-                    <h3 className="text-sm font-semibold text-white mt-1">{g.title}</h3>
-                  </Link>
-                ))}
-              </div>
+        <div className="mt-12">
+          <AdSlot slot="article-footer" />
+        </div>
+
+        <aside className="mt-14 border border-[#e2ddd4] bg-white/60 px-6 py-7">
+          <p className="eyebrow">Need this built</p>
+          <p className="mt-3 max-w-[52ch] text-[15.5px] leading-relaxed text-[#3a3f46]">
+            I build monthly reporting packs, lot-wise stock reports and Power BI dashboards
+            for trading and distribution teams. Send the file and what it has to answer.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-5 inline-block text-[13px] text-[#24405e] underline decoration-[#c9c2b6] underline-offset-4 hover:decoration-[#24405e]"
+          >
+            Get in touch
+          </Link>
+        </aside>
+
+        {related.length > 0 && (
+          <section className="mt-14">
+            <div className="border-b border-[#14161a] pb-3">
+              <h2 className="eyebrow">Read next</h2>
             </div>
-          )}
-        </article>
-      </main>
-      <Footer />
+            <ul>
+              {related.map((g) => (
+                <li key={g.slug} className="border-b border-[#e2ddd4]">
+                  <Link href={`/guides/${g.slug}`} className="group flex items-baseline justify-between gap-6 py-5">
+                    <span>
+                      <span className="block font-mono text-[10px] uppercase tracking-[0.1em] text-[#a8a29a]">
+                        {g.category}
+                      </span>
+                      <span className="mt-1 block text-[17px] text-[#14161a] group-hover:underline group-hover:decoration-[#c9c2b6] group-hover:underline-offset-4">
+                        {g.title}
+                      </span>
+                    </span>
+                    <span className="shrink-0 font-mono text-[10.5px] text-[#a8a29a]">
+                      {g.readMinutes} min
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </article>
     </>
   );
 }
