@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Power BI dashboards, lot-wise stock reconciliation and reporting systems built for HR, finance, retail and textile trading operations.',
+    'Power BI dashboards, Google Sheets systems and reporting builds: flow management, inventory, checklists, stock reconciliation and daily financial reporting.',
   alternates: { canonical: 'https://prashantkarna.com/projects' },
 };
 
@@ -64,6 +64,26 @@ const caseStudies = [
 
 const builds = [
   {
+    title: 'Flow management sheet (FMS)',
+    note: 'Order and job flow across sales, stores, job work and dispatch. Stage-wise status, ageing by stage and an exception view for anything stuck beyond its expected days.',
+    tools: ['Google Sheets', 'Apps Script'],
+  },
+  {
+    title: 'Employee checklist system',
+    note: 'Every recurring task assigned to a person, with daily and weekly recurrence. Staff mark their own work done through a shared Looker Studio view; the sheet keeps the audit trail.',
+    tools: ['Google Sheets', 'Looker Studio', 'Apps Script'],
+  },
+  {
+    title: 'Inventory management sheet (IMS)',
+    note: 'Item and lot level stock with inward, outward and adjustment entries, reorder points and a buy list. Feeds the daily inward and outward report.',
+    tools: ['Google Sheets', 'Apps Script'],
+  },
+  {
+    title: 'Daily financial report',
+    note: 'Day book summary published each morning: collections, payments, outstanding and cash position, reconciled to the ledger before release.',
+    tools: ['Google Sheets', 'Looker Studio'],
+  },
+  {
     title: 'Lot-wise fabric stock reconciliation',
     note: 'Lot-level model with inward, outward and job work movement, wastage lines and an exception report for negative balances and dead stock.',
     tools: ['Excel', 'Power Query'],
@@ -103,8 +123,8 @@ export default function ProjectsPage() {
         Reports, models and the systems that produce them.
       </h1>
       <p className="mt-6 max-w-[62ch] text-[16.5px] leading-relaxed text-[#3a3f46]">
-        Four dashboard case studies and six builds. Each one started as a file somebody
-        else could not trust.
+        Four dashboard case studies and ten builds. Some are reporting systems I run daily
+        in a trading business; the rest are analyses and automation.
       </p>
 
       <section className="mt-14">

@@ -28,7 +28,7 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-3 bottom-3 z-50 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-[380px]">
+    <div className="fixed inset-x-3 bottom-3 z-50 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-[380px] print:hidden">
       <div className="border border-[#14161a] bg-[#14161a] px-5 py-4 text-[#efeae2]">
         <p className="text-[13px] leading-relaxed">
           Cookies measure traffic and, once ads are switched on, show relevant advertising. Accept

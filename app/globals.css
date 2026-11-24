@@ -88,6 +88,19 @@
   }
 }
 
+/* Print */
+@media print {
+  @page {
+    margin: 10mm 12mm;
+  }
+  body {
+    background: #ffffff;
+  }
+  main {
+    margin: 0;
+  }
+}
+
 /* Long-form article typography */
 .prose-article {
   color: #2b2f35;

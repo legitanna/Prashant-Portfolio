@@ -3,11 +3,23 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Prashant Karna, data analyst in Ahmedabad. Seven years of MIS reporting, Power BI dashboards and Excel automation across finance, pharma, events and election analytics.',
+    'Prashant Karna, MIS and business systems specialist in Ahmedabad. Google Sheets, Apps Script, Looker Studio, Power BI and Excel reporting across textile trading, finance, pharma and election analytics.',
   alternates: { canonical: 'https://prashantkarna.com/about' },
 };
 
 const experience = [
+  {
+    period: '2026 — Present',
+    role: 'MIS Executive',
+    org: 'Textile trading company, Ahmedabad',
+    points: [
+      'Own the FMS: flow management across departments, with stage-wise tracking and exception flags.',
+      'Built a checklist system where every employee marks their own recurring work done, surfaced through a shared Looker Studio view.',
+      'Maintain the IMS inventory workbook and produce inward and outward reports for management.',
+      'Publish the daily financial report and reconcile it against the day book.',
+      'Build internal web apps with Google Apps Script, and maintain the company websites and IT setup.',
+    ],
+  },
   {
     period: 'Jul 2025 — Nov 2025',
     role: 'Data Analyst / Analytics Consultant',
@@ -52,6 +64,10 @@ const experience = [
 
 const skills = [
   {
+    group: 'Google Workspace',
+    items: ['Google Sheets', 'Apps Script', 'Looker Studio', 'Forms', 'Drive workflows'],
+  },
+  {
     group: 'BI and dashboards',
     items: ['Power BI', 'DAX', 'Power Query', 'Data modelling', 'KPI design'],
   },
@@ -64,12 +80,12 @@ const skills = [
     items: ['Pandas', 'NumPy', 'OpenCV', 'Tesseract OCR', 'Selenium'],
   },
   {
-    group: 'Excel and MIS',
-    items: ['Advanced Excel', 'Pivot tables', 'Power Query', 'VBA macros', 'Reconciliation'],
+    group: 'Excel and reporting',
+    items: ['Advanced Excel', 'Pivot tables', 'VBA macros', 'Reconciliation', 'MIS packs'],
   },
   {
-    group: 'Platforms',
-    items: ['Power BI Service', 'SSMS', 'Git', 'VS Code', 'Jupyter'],
+    group: 'Web and IT',
+    items: ['HTML and CSS', 'Static sites', 'Git', 'Workspace admin', 'Internal tooling'],
   },
 ];
 
@@ -85,25 +101,26 @@ export default function AboutPage() {
     <div className="wrap-narrow py-14 sm:py-16">
       <p className="eyebrow">About</p>
       <h1 className="display mt-5 max-w-[24ch] text-[2.2rem] sm:text-[2.9rem]">
-        Seven years of turning exports into numbers people trust.
+        I run the systems a trading business reports from.
       </h1>
 
       <div className="mt-8 space-y-5 text-[16.5px] leading-relaxed text-[#3a3f46]">
         <p>
-          I am a data analyst based in Ahmedabad. My work is recurring reporting: the
-          monthly pack, the stock statement, the ledger that has to agree with the
-          accounts, the dashboard a manager opens on a Monday.
+          I am an MIS executive in Ahmedabad, working inside a textile trading company.
+          My remit is wider than reporting: the flow management sheet that tracks orders
+          across departments, the inventory workbook, the daily financial report, the
+          checklist system every employee marks their work in, and the internal apps that
+          hold it together.
         </p>
         <p>
-          Most of it is Excel and Power Query, with Power BI where a report needs to be
-          shared rather than emailed. I have done this for a finance and audit firm, for a
-          US pharmacy operation as the only analyst on it, for an election analytics
-          programme, and for textile trading houses where the same design arrives in three
-          dye lots and none of them are interchangeable.
+          Most of it runs on Google Sheets, Apps Script and Looker Studio, because the whole
+          company already lives in Workspace. Before this I built the same kinds of reports
+          in Excel, Power Query and Power BI, for a finance and audit firm, a US pharmacy
+          operation, an election analytics programme, and exhibition operations.
         </p>
         <p>
-          The writing on this site is the same work written down. If a report took three
-          days to build and one mistake to fix, that is what the guide covers.
+          The writing on this site is that work written down. If a report took three days to
+          build and one mistake to fix, the guide covers the mistake.
         </p>
       </div>
 
@@ -132,9 +149,11 @@ export default function AboutPage() {
         >
           GitHub
         </a>
+        <a href="/resume" className="text-[#24405e] underline decoration-[#c9c2b6] underline-offset-4 hover:decoration-[#24405e]">
+          Web version
+        </a>
       </div>
 
-      {/* Experience */}
       <section className="mt-16">
         <div className="border-b border-[#14161a] pb-3">
           <h2 className="eyebrow">Experience</h2>
@@ -165,7 +184,6 @@ export default function AboutPage() {
         </ol>
       </section>
 
-      {/* Skills */}
       <section className="mt-16">
         <div className="border-b border-[#14161a] pb-3">
           <h2 className="eyebrow">Tools</h2>
@@ -187,7 +205,6 @@ export default function AboutPage() {
         </dl>
       </section>
 
-      {/* Learning */}
       <section className="mt-12">
         <div className="border-b border-[#14161a] pb-3">
           <h2 className="eyebrow">Courses and study</h2>

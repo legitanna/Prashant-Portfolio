@@ -19,7 +19,7 @@ export default function SiteNav() {
     pathname === href || (href !== '/' && pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#e2ddd4] bg-[#fbf9f5]/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-[#e2ddd4] bg-[#fbf9f5]/95 backdrop-blur-sm print:hidden">
       <div className="wrap flex h-16 items-center justify-between">
         <Link
           href="/"
