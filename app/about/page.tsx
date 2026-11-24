@@ -3,21 +3,33 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Prashant Karna, MIS and business systems specialist in Ahmedabad. Google Sheets, Apps Script, Looker Studio, Power BI and Excel reporting across textile trading, finance, pharma and election analytics.',
+    'MIS and business systems specialist in Ahmedabad. I build FMS flow management sheets, IMS inventory systems, employee checklists and dashboards in Google Sheets, Apps Script and Looker Studio, with Power BI and SQL where the data outgrows a spreadsheet.',
+  keywords: [
+    'FMS',
+    'flow management system',
+    'IMS',
+    'inventory management system',
+    'checklist system',
+    'dashboards',
+    'Google Sheets',
+    'Apps Script',
+    'Looker Studio',
+    'MIS reporting',
+  ],
   alternates: { canonical: 'https://prashantkarna.com/about' },
 };
 
 const experience = [
   {
     period: '2026 — Present',
-    role: 'MIS Executive',
+    role: 'MIS Executive — Business Systems',
     org: 'Maitri Texfab Pvt Ltd, Ahmedabad',
     points: [
-      'Own the FMS: flow management across departments, with stage-wise tracking and exception flags.',
-      'Built a checklist system where every employee marks their own recurring work done, surfaced through a shared Looker Studio view.',
-      'Maintain the IMS inventory workbook and produce inward and outward reports for management.',
-      'Publish the daily financial report and reconcile it against the day book.',
-      'Build internal web apps with Google Apps Script, and maintain the company websites and IT setup.',
+      'Own the FMS (flow management system) for the trading operation: every order tracked through booking, design approval, job work, quality check and dispatch, with stage ageing and exception flags.',
+      'Designed the company checklist system: recurring tasks assigned per employee, marked complete by staff, and surfaced through a live completion dashboard in Looker Studio.',
+      'Maintain the IMS (inventory management system) across inward, outward and adjustments, with reorder points, a generated buy list and a daily inward and outward report.',
+      'Publish the daily financial report and monthly MIS pack, reconciled to the books before release.',
+      'Build internal web apps and dashboards with Google Apps Script and Looker Studio, and maintain the company websites and IT setup.',
     ],
   },
   {
@@ -64,8 +76,12 @@ const experience = [
 
 const skills = [
   {
+    group: 'Systems I build',
+    items: ['FMS', 'IMS', 'Checklists', 'Dashboards', 'Approval flows', 'Reorder logic'],
+  },
+  {
     group: 'Google Workspace',
-    items: ['Google Sheets', 'Apps Script', 'Looker Studio', 'Forms', 'Drive workflows'],
+    items: ['Sheets', 'Apps Script', 'Looker Studio', 'Forms', 'Drive workflows', 'Admin'],
   },
   {
     group: 'BI and dashboards',
@@ -83,10 +99,6 @@ const skills = [
     group: 'Excel and reporting',
     items: ['Advanced Excel', 'Pivot tables', 'VBA macros', 'Reconciliation', 'MIS packs'],
   },
-  {
-    group: 'Web and IT',
-    items: ['HTML and CSS', 'Static sites', 'Git', 'Workspace admin', 'Internal tooling'],
-  },
 ];
 
 const learning = [
@@ -100,27 +112,38 @@ export default function AboutPage() {
   return (
     <div className="wrap-narrow py-14 sm:py-16">
       <p className="eyebrow">About</p>
-      <h1 className="display mt-5 max-w-[24ch] text-[2.2rem] sm:text-[2.9rem]">
-        I run the systems a trading business reports from.
+      <h1 className="display mt-5 max-w-[26ch] text-[2.2rem] sm:text-[2.9rem]">
+        I design and run the systems a trading business reports from.
       </h1>
 
       <div className="mt-8 space-y-5 text-[16.5px] leading-relaxed text-[#3a3f46]">
         <p>
           I am an MIS executive at Maitri Texfab Pvt Ltd, a textile trading company in
-          Ahmedabad. My remit is wider than reporting: the flow management sheet that tracks
-          orders across departments, the inventory workbook, the daily financial report, the
-          checklist system every employee marks their work in, and the internal apps that
-          hold it together.
+          Ahmedabad. My work is not a monthly spreadsheet. It is the operating layer of the
+          business: an <strong className="font-semibold text-[#14161a]">FMS</strong> that moves
+          every order through its stages, an{' '}
+          <strong className="font-semibold text-[#14161a]">IMS</strong> that keeps stock and
+          reorder points honest, a{' '}
+          <strong className="font-semibold text-[#14161a]">checklist system</strong> that makes
+          daily accountability visible, and the{' '}
+          <strong className="font-semibold text-[#14161a]">dashboards</strong> that report all
+          three.
         </p>
         <p>
-          Most of it runs on Google Sheets, Apps Script and Looker Studio, because the whole
-          company already lives in Workspace. Before this I built the same kinds of reports
-          in Excel, Power Query and Power BI, for a finance and audit firm, a US pharmacy
-          operation, an election analytics programme, and exhibition operations.
+          The constraint in a trading business is rarely analytical. It is that the order sits
+          with a job worker for nine days and nobody notices until the customer calls. Systems
+          like these exist to surface that on day three, while there is still time to act.
         </p>
         <p>
-          The writing on this site is that work written down. If a report took three days to
-          build and one mistake to fix, the guide covers the mistake.
+          Most of it runs on Google Sheets, Apps Script and Looker Studio, because the company
+          already works inside Google Workspace and a system nobody opens is worth nothing.
+          Where the data outgrows a spreadsheet I use Power BI, Power Query and SQL, which is
+          the same work with heavier machinery: a finance and audit firm, a US pharmacy
+          operation, an election analytics programme, and exhibition operations before that.
+        </p>
+        <p>
+          I write about all of it here, including the parts that failed first. If a report took
+          three days to build and one mistake to fix, the guide covers the mistake.
         </p>
       </div>
 
@@ -149,7 +172,10 @@ export default function AboutPage() {
         >
           GitHub
         </a>
-        <a href="/resume" className="text-[#24405e] underline decoration-[#c9c2b6] underline-offset-4 hover:decoration-[#24405e]">
+        <a
+          href="/resume"
+          className="text-[#24405e] underline decoration-[#c9c2b6] underline-offset-4 hover:decoration-[#24405e]"
+        >
           Web version
         </a>
       </div>

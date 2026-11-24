@@ -40,14 +40,14 @@ export default function Home() {
           <div>
             <p className="eyebrow">Data analyst · Ahmedabad, India</p>
 
-            <h1 className="display mt-6 max-w-[18ch] text-[2.6rem] sm:text-[3.4rem]">
-              I build the reports a business actually runs on.
+            <h1 className="display mt-6 max-w-[20ch] text-[2.6rem] sm:text-[3.4rem]">
+              I build the FMS, IMS and dashboards a trading business runs on.
             </h1>
 
             <p className="mt-7 max-w-[54ch] text-[17px] leading-relaxed text-[#4a4f56]">
-              Seven years of MIS and analytics, most recently for textile trading and
-              pharmaceutical distribution. Excel, Power Query, Power BI and SQL — the
-              unglamorous work of making a number trustworthy enough to decide on.
+              MIS and business systems, built inside Google Sheets, Apps Script and Looker
+              Studio, with Power BI and SQL where the data outgrows a spreadsheet. Flow
+              management, inventory, employee checklists and the reporting underneath them.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
@@ -103,6 +103,50 @@ export default function Home() {
             </div>
           ))}
         </dl>
+      </section>
+
+      {/* What I build */}
+      <section className="wrap py-14">
+        <div className="border-b border-[#14161a] pb-3">
+          <h2 className="eyebrow">What I build</h2>
+        </div>
+
+        <div className="grid gap-x-10 gap-y-8 py-8 sm:grid-cols-2">
+          {[
+            {
+              term: 'FMS',
+              name: 'Flow management system',
+              text: 'Every order and job work order tracked through its stages, with an owner, a due date and an ageing figure. Anything stuck shows up on day three, not day nine.',
+            },
+            {
+              term: 'IMS',
+              name: 'Inventory management system',
+              text: 'Item and lot level stock with inward, outward and adjustments, reorder points calculated from lead time and usage, and a buy list generated instead of guessed.',
+            },
+            {
+              term: 'Checklist',
+              name: 'Employee task tracking',
+              text: 'Recurring work assigned to a person, marked complete by that person, with a read-only completion dashboard so managers see the week without chasing anyone.',
+            },
+            {
+              term: 'Dashboards',
+              name: 'Reporting and MIS',
+              text: 'Looker Studio and Power BI views reading from the same source as the sheets, so the number in the meeting matches the number in the file.',
+            },
+          ].map((item) => (
+            <div key={item.term} className="border-t border-[#e2ddd4] pt-5">
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#24405e]">
+                  {item.term}
+                </span>
+                <h3 className="text-[16px] text-[#14161a]">{item.name}</h3>
+              </div>
+              <p className="mt-2 max-w-[52ch] text-[14px] leading-relaxed text-[#5f646c]">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Writing */}

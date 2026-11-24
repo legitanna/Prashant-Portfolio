@@ -11,13 +11,14 @@ export const metadata: Metadata = {
 const roles = [
   {
     period: '2026 — Present',
-    role: 'MIS Executive',
+    role: 'MIS Executive — Business Systems',
     org: 'Maitri Texfab Pvt Ltd · Ahmedabad',
     points: [
-      'Own the flow management sheet (FMS) tracking order and job flow across sales, stores, job work and dispatch, with stage ageing and exception flags.',
-      'Built an employee checklist system where staff mark recurring work complete through a shared Looker Studio view.',
-      'Maintain the inventory management sheet (IMS) and publish daily inward, outward and financial reports.',
-      'Build internal web apps in Google Apps Script and maintain company websites and IT setup.',
+      'Own the FMS (flow management system): every order tracked from booking through design approval, job work, quality check and dispatch, with stage ageing and exception flags.',
+      'Designed the company checklist system: recurring tasks assigned per employee, marked complete by staff, and surfaced through a live completion dashboard in Looker Studio.',
+      'Maintain the IMS (inventory management system) across inward, outward and adjustments, with reorder points, a generated buy list and a daily inward and outward report.',
+      'Publish the daily financial dashboard and monthly MIS pack, reconciled to the books before release.',
+      'Build internal web apps and dashboards with Google Apps Script; maintain company websites and IT setup.',
     ],
   },
   {
@@ -85,7 +86,7 @@ export default function ResumePage() {
           Prashant Karna
         </h1>
         <p className="mt-1.5 text-[13.5px] text-[#2b2f35] print:text-[9.5pt]">
-          MIS Executive · Business Systems &amp; Reporting
+          MIS Executive · FMS · IMS · Checklists · Dashboards
         </p>
         <p className="mt-1 font-mono text-[10.5px] leading-relaxed text-[#5f646c] print:text-[7.6pt]">
           Ahmedabad, India · prashantkarna6@gmail.com · linkedin.com/in/prashantkarna ·
@@ -95,10 +96,10 @@ export default function ResumePage() {
 
       <p className="mt-4 text-[13px] leading-relaxed text-[#2b2f35] print:mt-3 print:text-[8.6pt] print:leading-[1.45]">
         MIS and reporting professional working across textile trading, finance, healthcare and
-        campaign analytics since 2016. I build the systems a company reports from: flow
-        management, inventory, checklists, daily financial reporting, and the internal apps that
-        hold them together. Google Sheets and Apps Script in practice, Power BI and SQL where the
-        data outgrows a spreadsheet.
+        campaign analytics since 2016. I build the systems a company reports from: FMS flow
+        management, IMS inventory, employee checklists, dashboards and the internal apps that
+        hold them together. Google Sheets, Apps Script and Looker Studio in practice; Power BI
+        and SQL where the data outgrows a spreadsheet.
       </p>
 
       <section className="mt-5 print:mt-3.5">
