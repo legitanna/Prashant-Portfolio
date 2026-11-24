@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Metrics from '@/components/Metrics';
 import About from '@/components/About';
 import CaseStudies from '@/components/CaseStudies';
+import GuidesTeaser from '@/components/GuidesTeaser';
 import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
 import Learning from '@/components/Learning';
@@ -19,6 +20,7 @@ export default function Home() {
         <Metrics />
         <About />
         <CaseStudies />
+        <GuidesTeaser />
         <Experience />
         <Skills />
         <Learning />
