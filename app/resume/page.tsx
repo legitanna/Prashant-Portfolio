@@ -12,7 +12,7 @@ const roles = [
   {
     period: '2026 — Present',
     role: 'MIS Executive',
-    org: 'Textile trading company · Ahmedabad',
+    org: 'Maitri Texfab Pvt Ltd · Ahmedabad',
     points: [
       'Own the flow management sheet (FMS) tracking order and job flow across sales, stores, job work and dispatch, with stage ageing and exception flags.',
       'Built an employee checklist system where staff mark recurring work complete through a shared Looker Studio view.',

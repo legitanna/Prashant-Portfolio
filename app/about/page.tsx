@@ -11,7 +11,7 @@ const experience = [
   {
     period: '2026 — Present',
     role: 'MIS Executive',
-    org: 'Textile trading company, Ahmedabad',
+    org: 'Maitri Texfab Pvt Ltd, Ahmedabad',
     points: [
       'Own the FMS: flow management across departments, with stage-wise tracking and exception flags.',
       'Built a checklist system where every employee marks their own recurring work done, surfaced through a shared Looker Studio view.',
@@ -106,9 +106,9 @@ export default function AboutPage() {
 
       <div className="mt-8 space-y-5 text-[16.5px] leading-relaxed text-[#3a3f46]">
         <p>
-          I am an MIS executive in Ahmedabad, working inside a textile trading company.
-          My remit is wider than reporting: the flow management sheet that tracks orders
-          across departments, the inventory workbook, the daily financial report, the
+          I am an MIS executive at Maitri Texfab Pvt Ltd, a textile trading company in
+          Ahmedabad. My remit is wider than reporting: the flow management sheet that tracks
+          orders across departments, the inventory workbook, the daily financial report, the
           checklist system every employee marks their work in, and the internal apps that
           hold it together.
         </p>
