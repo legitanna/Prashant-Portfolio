@@ -25,6 +25,7 @@ export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [honey, setHoney] = useState('');
   const [state, setState] = useState<State>('idle');
+  const [reason, setReason] = useState('');
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,9 +49,11 @@ export default function ContactForm() {
         setState('sent');
         setForm({ name: '', email: '', message: '' });
       } else {
+        setReason(typeof data.message === 'string' ? data.message : '');
         setState('error');
       }
     } catch {
+      setReason('');
       setState('error');
     }
   };
@@ -139,6 +142,7 @@ export default function ContactForm() {
             {DIRECT_EMAIL}
           </a>{' '}
           instead.
+          {reason && <span className="block mt-1 text-[12px] text-[#a8a29a]">{reason}</span>}
         </p>
       )}
 
