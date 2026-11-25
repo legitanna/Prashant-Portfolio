@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Figure, ValueChainDiagram } from '@/components/Diagrams';
 
 export const metadata: Metadata = {
   title: 'Services — FMS, IMS and automated reporting',
@@ -110,6 +111,12 @@ export default function ServicesPage() {
         I build reporting and operations systems for manufacturers and traders, in the tools
         your team already opens every day. Fixed scope, fixed fee, handed over working.
       </p>
+
+      <div className="mt-12 border-y border-[#e2ddd4] py-8">
+        <Figure caption="Every step is tracked where it happens. The report reads all of them, not a copy of one.">
+          <ValueChainDiagram className="h-auto w-full" />
+        </Figure>
+      </div>
 
       <section className="mt-14">
         <div className="border-b border-[#14161a] pb-3">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllGuides } from '@/lib/guides';
+import { Figure, PipelineDiagram } from '@/components/Diagrams';
 
 const stats = [
   { value: '07', label: 'years in MIS and BI' },
@@ -104,6 +105,15 @@ export default function Home() {
             </div>
           ))}
         </dl>
+      </section>
+
+      {/* Schematic */}
+      <section className="wrap py-12">
+        <div className="border-y border-[#e2ddd4] py-8">
+          <Figure caption="Flow and stock feed one reporting layer, so the number in the meeting matches the number in the file.">
+            <PipelineDiagram className="h-auto w-full" />
+          </Figure>
+        </div>
       </section>
 
       {/* What I build */}

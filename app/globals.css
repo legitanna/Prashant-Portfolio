@@ -88,8 +88,14 @@
   }
 }
 
-/* Print */
-@media print {
+/* Diagrams */
+@media (max-width: 640px) {
+  .diagram-note {
+    display: none;
+  }
+}
+
+/* Print */@media print {
   @page {
     margin: 10mm 12mm;
   }
