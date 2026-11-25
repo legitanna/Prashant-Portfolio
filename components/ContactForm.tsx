@@ -15,7 +15,10 @@ export default function ContactForm() {
       const res = await fetch('https://formspree.io/f/mgobgvld', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          _subject: `New enquiry from prashantkarna.com — ${form.name || 'website'}`,
+        }),
       });
       if (res.ok) {
         setState('sent');

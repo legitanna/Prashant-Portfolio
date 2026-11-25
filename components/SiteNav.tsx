@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const links = [
-  { label: 'Guides', href: '/guides' },
+  { label: 'Services', href: '/services' },
   { label: 'Work', href: '/projects' },
+  { label: 'Guides', href: '/guides' },
   { label: 'About', href: '/about' },
 ];
 
@@ -47,15 +48,6 @@ export default function SiteNav() {
               {link.label}
             </Link>
           ))}
-
-          <a
-            href="/Prashant_Karna_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13.5px] text-[#5f646c] transition-colors hover:text-[#14161a]"
-          >
-            Résumé
-          </a>
 
           <Link
             href={cta.href}
@@ -104,14 +96,6 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="/Prashant_Karna_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-b border-[#efeae2] py-3 text-sm text-[#2b2f35]"
-            >
-              Résumé (PDF)
-            </a>
             <Link
               href={cta.href}
               onClick={() => setOpen(false)}

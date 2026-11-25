@@ -97,8 +97,8 @@ export default function GuidePage({ params }: Params) {
         <aside className="mt-14 border border-[#e2ddd4] bg-white/60 px-6 py-7">
           <p className="eyebrow">Need this built</p>
           <p className="mt-3 max-w-[52ch] text-[15.5px] leading-relaxed text-[#3a3f46]">
-            I build monthly reporting packs, lot-wise stock reports and Power BI dashboards
-            for trading and distribution teams. Send the file and what it has to answer.
+            I build reporting packs, flow and inventory systems and dashboards for businesses
+            that run on spreadsheets. Send the file and what it has to answer.
           </p>
           <Link
             href="/contact"

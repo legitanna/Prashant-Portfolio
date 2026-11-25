@@ -113,7 +113,7 @@ export default function AboutPage() {
     <div className="wrap-narrow py-14 sm:py-16">
       <p className="eyebrow">About</p>
       <h1 className="display mt-5 max-w-[26ch] text-[2.2rem] sm:text-[2.9rem]">
-        I design and run the systems a trading business reports from.
+        I design and run the systems a business reports from.
       </h1>
 
       <div className="mt-8 space-y-5 text-[16.5px] leading-relaxed text-[#3a3f46]">

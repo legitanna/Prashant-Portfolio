@@ -12,7 +12,7 @@ export default function SiteFooter() {
             Prashant Karna
           </p>
           <p className="mt-2 max-w-[26ch] text-[13px] leading-relaxed text-[#5f646c]">
-            MIS reporting, Power BI and Excel systems for trading and operations teams.
+            Flow, stock and reporting systems for businesses that run on spreadsheets.
           </p>
         </div>
 
@@ -20,8 +20,9 @@ export default function SiteFooter() {
           <p className="eyebrow mb-3">Pages</p>
           <ul className="space-y-2 text-[13px] text-[#5f646c]">
             {[
-              { label: 'Guides', href: '/guides' },
+              { label: 'Services', href: '/services' },
               { label: 'Work', href: '/projects' },
+              { label: 'Guides', href: '/guides' },
               { label: 'About', href: '/about' },
               { label: "Let's connect", href: '/contact' },
               { label: 'Privacy', href: '/privacy' },
