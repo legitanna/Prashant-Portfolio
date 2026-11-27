@@ -1,10 +1,10 @@
 type Props = { className?: string };
 
-const ink = '#14161a';
-const accent = '#24405e';
-const rule = '#c9c2b6';
-const faint = '#e2ddd4';
-const muted = '#7d828a';
+const ink = '#1a1713';
+const accent = '#7e5e24';
+const rule = '#cdbc9c';
+const faint = '#e5d9c2';
+const muted = '#8a8378';
 
 const label = {
   fill: muted,
@@ -14,7 +14,7 @@ const label = {
 };
 
 const small = {
-  fill: '#9a9ea5',
+  fill: '#9a917f',
   fontSize: '9',
   fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
 };
@@ -172,7 +172,7 @@ export function Figure({ children, caption }: { children: React.ReactNode; capti
   return (
     <figure>
       {children}
-      <figcaption className="mt-5 max-w-[70ch] font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-[#8a8f97]">
+      <figcaption className="mt-5 max-w-[70ch] font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-[#8a8378]">
         {caption}
       </figcaption>
     </figure>

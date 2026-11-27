@@ -4,12 +4,14 @@
 
 @layer base {
   :root {
-    --paper: #fbf9f5;
-    --ink: #14161a;
-    --ink-soft: #2b2f35;
-    --muted: #5f646c;
-    --rule: #e2ddd4;
-    --accent: #24405e;
+    --paper: #faf6ed;
+    --paper-deep: #f3e8d2;
+    --ink: #1a1713;
+    --ink-soft: #33302a;
+    --muted: #6b655a;
+    --rule: #e4d9c4;
+    --brass: #7e5e24;
+    --brass-line: #c8a86a;
   }
 
   html {
@@ -24,8 +26,8 @@
   }
 
   ::selection {
-    background: #24405e;
-    color: #fbf9f5;
+    background: #7e5e24;
+    color: #faf6ed;
   }
 
   a {
@@ -33,7 +35,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--brass);
     outline-offset: 3px;
   }
 }
@@ -48,7 +50,9 @@
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-[#8a8f97];
+    @apply font-mono text-[11px] uppercase tracking-[0.18em];
+    color: var(--brass);
+    font-weight: 500;
   }
 
   .display {
@@ -62,8 +66,14 @@
     border-top: 1px solid var(--rule);
   }
 
+  .band {
+    background: var(--paper-deep);
+  }
+
   .tag {
-    @apply inline-flex items-center border border-[#e2ddd4] px-2 py-[3px] font-mono text-[10px] uppercase tracking-[0.12em] text-[#5f646c];
+    @apply inline-flex items-center border px-2 py-[3px] font-mono text-[10px] uppercase tracking-[0.12em];
+    border-color: var(--rule);
+    color: var(--muted);
   }
 
   .btn {
@@ -71,20 +81,40 @@
   }
 
   .btn-solid {
-    @apply btn bg-[#14161a] text-[#fbf9f5] hover:bg-[#24405e];
+    @apply btn bg-[#1a1713] text-[#faf6ed];
+  }
+
+  .btn-solid:hover {
+    background: var(--brass);
   }
 
   .btn-ghost {
-    @apply btn border border-[#e2ddd4] text-[#14161a] hover:border-[#14161a];
+    @apply btn border text-[#1a1713];
+    border-color: var(--rule);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--brass);
+    color: var(--brass);
   }
 
   .link-quiet {
-    @apply text-[#24405e] underline decoration-[#c9c2b6] decoration-1 hover:decoration-[#24405e];
+    @apply underline decoration-1;
+    color: var(--brass);
+    text-decoration-color: var(--brass-line);
+  }
+
+  .link-quiet:hover {
+    text-decoration-color: var(--brass);
   }
 
   .num {
     font-variant-numeric: tabular-nums;
     font-feature-settings: 'tnum' 1;
+  }
+
+  .hair {
+    border-top: 1px solid var(--brass-line);
   }
 }
 

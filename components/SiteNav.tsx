@@ -21,15 +21,16 @@ export default function SiteNav() {
     pathname === href || (href !== '/' && pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#e2ddd4] bg-[#fbf9f5]/95 backdrop-blur-sm print:hidden">
+    <header className="sticky top-0 z-40 border-b border-[#e4d9c4] bg-[#faf6ed]/95 backdrop-blur-sm print:hidden">
+      <div className="h-[2px] bg-[#c8a86a]" />
       <div className="wrap flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="font-display text-[17px] text-[#14161a]"
+          className="font-display text-[17px] text-[#1a1713]"
           style={{ fontFamily: 'var(--font-display), Georgia, serif' }}
         >
           Prashant Karna
-          <span className="ml-2 hidden font-mono text-[10px] uppercase tracking-[0.14em] text-[#8a8f97] sm:inline">
+          <span className="ml-2 hidden font-mono text-[10px] uppercase tracking-[0.14em] text-[#9a917f] sm:inline">
             MIS &amp; analytics
           </span>
         </Link>
@@ -41,8 +42,8 @@ export default function SiteNav() {
               href={link.href}
               className={`text-[13.5px] transition-colors ${
                 isActive(link.href)
-                  ? 'text-[#14161a] underline decoration-[#14161a] decoration-1 underline-offset-[6px]'
-                  : 'text-[#5f646c] hover:text-[#14161a]'
+                  ? 'text-[#1a1713] underline decoration-[#1a1713] decoration-1 underline-offset-[6px]'
+                  : 'text-[#6b655a] hover:text-[#1a1713]'
               }`}
             >
               {link.label}
@@ -53,8 +54,8 @@ export default function SiteNav() {
             href={cta.href}
             className={`inline-flex items-center gap-1.5 px-4 py-2 text-[13.5px] transition-colors ${
               isActive(cta.href)
-                ? 'bg-[#24405e] text-[#fbf9f5]'
-                : 'bg-[#14161a] text-[#fbf9f5] hover:bg-[#24405e]'
+                ? 'bg-[#7e5e24] text-[#faf6ed]'
+                : 'bg-[#1a1713] text-[#faf6ed] hover:bg-[#7e5e24]'
             }`}
           >
             {cta.label}
@@ -68,7 +69,7 @@ export default function SiteNav() {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
-          className="md:hidden -mr-2 p-2 text-[#14161a]"
+          className="md:hidden -mr-2 p-2 text-[#1a1713]"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
             {open ? (
@@ -84,14 +85,14 @@ export default function SiteNav() {
       </div>
 
       {open && (
-        <div className="border-t border-[#e2ddd4] md:hidden">
+        <div className="border-t border-[#e4d9c4] md:hidden">
           <div className="wrap flex flex-col py-2">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-[#efeae2] py-3 text-sm text-[#2b2f35] last:border-0"
+                className="border-b border-[#f0e6d3] py-3 text-sm text-[#2b2f35] last:border-0"
               >
                 {link.label}
               </Link>
@@ -99,7 +100,7 @@ export default function SiteNav() {
             <Link
               href={cta.href}
               onClick={() => setOpen(false)}
-              className="mt-3 mb-2 flex items-center justify-between bg-[#14161a] px-4 py-3 text-sm text-[#fbf9f5]"
+              className="mt-3 mb-2 flex items-center justify-between bg-[#1a1713] px-4 py-3 text-sm text-[#faf6ed]"
             >
               {cta.label}
               <span aria-hidden="true">→</span>
