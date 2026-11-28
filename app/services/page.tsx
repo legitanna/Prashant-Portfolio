@@ -102,107 +102,138 @@ const steps = [
 
 export default function ServicesPage() {
   return (
-    <div className="wrap py-14 sm:py-16">
-      <p className="eyebrow">Services</p>
-      <h1 className="display mt-5 max-w-[22ch] text-[2.2rem] sm:text-[2.9rem]">
-        Systems that produce the numbers themselves.
-      </h1>
-      <p className="mt-6 max-w-[62ch] text-[16.5px] leading-relaxed text-[#3a3f46]">
-        I build reporting and operations systems for manufacturers and traders, in the tools
-        your team already opens every day. Fixed scope, fixed fee, handed over working.
-      </p>
+    <>
+      <div className="wrap pb-4 pt-14 sm:pt-20">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-8 bg-[#c8a86a]" />
+          <p className="eyebrow">Services</p>
+        </div>
 
-      <div className="mt-12 border-y border-[#e2ddd4] py-8">
-        <Figure caption="Every step is tracked where it happens. The report reads all of them, not a copy of one.">
-          <ValueChainDiagram className="h-auto w-full" />
-        </Figure>
+        <h1 className="display mt-7 max-w-[24ch] text-[2.4rem] sm:text-[3.2rem]">
+          Systems that produce the numbers themselves.
+        </h1>
+
+        <p className="mt-6 max-w-[60ch] text-[16.5px] leading-relaxed text-[#4a463e]">
+          I build reporting and operations systems for manufacturers and traders, in the tools
+          your team already opens every day. Fixed scope, fixed fee, handed over working.
+        </p>
+
+        <div className="mt-12 flex flex-wrap gap-x-8 gap-y-2 border-y border-[#e4d9c4] py-4 font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#8a8378]">
+          <span>MIS</span>
+          <span>Automation</span>
+          <span>FMS</span>
+          <span>IMS</span>
+          <span>Flows</span>
+          <span className="ml-auto hidden sm:inline">Five services</span>
+        </div>
       </div>
 
-      <section className="mt-14">
-        <div className="border-b border-[#14161a] pb-3">
-          <h2 className="eyebrow">What I build</h2>
+      <section className="band mt-10 border-y border-[#e4d9c4] py-10">
+        <div className="wrap">
+          <Figure caption="Every step is tracked where it happens. The report reads all of them, not a copy of one.">
+            <ValueChainDiagram className="h-auto w-full" />
+          </Figure>
         </div>
+      </section>
 
-        <div>
-          {services.map((s) => (
-            <article
-              key={s.title}
-              className="grid gap-3 border-b border-[#e2ddd4] py-8 lg:grid-cols-[9rem_1fr] lg:gap-10"
-            >
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#24405e]">
-                  {s.term}
-                </p>
-              </div>
-              <div>
-                <h3
-                  className="text-[21px] leading-snug text-[#14161a]"
-                  style={{ fontFamily: 'var(--font-display), Georgia, serif' }}
-                >
-                  {s.title}
-                </h3>
-                <p className="mt-2 max-w-[62ch] text-[15px] leading-relaxed text-[#3a3f46]">
+      <div className="wrap">
+        <section className="pt-16">
+          <div className="flex items-baseline justify-between gap-6 border-b border-[#c8a86a] pb-3">
+            <h2 className="eyebrow">What I build</h2>
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#8a8378]">
+              Fixed scope · fixed fee
+            </span>
+          </div>
+
+          <div>
+            {services.map((s, i) => (
+              <article
+                key={s.title}
+                className="grid gap-3 border-b border-[#e4d9c4] py-9 lg:grid-cols-[7.5rem_1fr] lg:gap-10"
+              >
+                <div>
+                  <p className="num font-mono text-[11.5px] text-[#b08b4a]">
+                    {String(i + 1).padStart(2, '0')}
+                  </p>
+                  <p className="mt-1.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#7e5e24]">
+                    {s.term}
+                  </p>
+                </div>
+
+                <div>
+                  <h3
+                    className="text-[22px] leading-snug text-[#1a1713]"
+                    style={{ fontFamily: 'var(--font-display), Georgia, serif' }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="mt-2.5 max-w-[62ch] text-[15px] leading-relaxed text-[#4a463e]">
+                    {s.body}
+                  </p>
+                  <ul className="mt-5 grid gap-x-10 gap-y-1.5 sm:grid-cols-2">
+                    {s.points.map((p) => (
+                      <li
+                        key={p}
+                        className="flex gap-2.5 text-[13.5px] leading-relaxed text-[#6b655a]"
+                      >
+                        <span className="mt-[9px] h-px w-2.5 shrink-0 bg-[#c8a86a]" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <div className="flex items-baseline justify-between gap-6 border-b border-[#c8a86a] pb-3">
+            <h2 className="eyebrow">How it runs</h2>
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#8a8378]">
+              Two to four weeks
+            </span>
+          </div>
+
+          <div className="grid gap-x-12 gap-y-9 py-9 sm:grid-cols-2">
+            {steps.map((s) => (
+              <div key={s.n} className="border-t border-[#e4d9c4] pt-5">
+                <p className="num font-mono text-[11.5px] text-[#b08b4a]">{s.n}</p>
+                <h3 className="mt-2.5 text-[17px] text-[#1a1713]">{s.title}</h3>
+                <p className="mt-2 max-w-[46ch] text-[13.5px] leading-relaxed text-[#6b655a]">
                   {s.body}
                 </p>
-                <ul className="mt-4 space-y-1.5">
-                  {s.points.map((p) => (
-                    <li
-                      key={p}
-                      className="flex gap-2.5 text-[13.5px] leading-relaxed text-[#5f646c]"
-                    >
-                      <span className="mt-[9px] h-px w-2.5 shrink-0 bg-[#c9c2b6]" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <section className="band mt-6 border-y border-[#e4d9c4] py-10">
+        <div className="wrap">
+          <div className="grid gap-4 sm:grid-cols-[14rem_1fr] sm:gap-10">
+            <p className="eyebrow">Before we talk</p>
+            <p className="max-w-[62ch] text-[16px] leading-relaxed text-[#33302a]">
+              Have three things ready and the conversation is twice as useful: one sample
+              export of the data, how often the report is produced, and who reads it. The last
+              one matters most. A report with no named reader is a report nobody uses.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="mt-16">
-        <div className="border-b border-[#14161a] pb-3">
-          <h2 className="eyebrow">How it runs</h2>
-        </div>
-        <div className="grid gap-x-10 gap-y-8 py-8 sm:grid-cols-2">
-          {steps.map((s) => (
-            <div key={s.n} className="border-t border-[#e2ddd4] pt-5">
-              <p className="num font-mono text-[11px] text-[#a8a29a]">{s.n}</p>
-              <h3 className="mt-2 text-[16px] text-[#14161a]">{s.title}</h3>
-              <p className="mt-2 max-w-[46ch] text-[14px] leading-relaxed text-[#5f646c]">
-                {s.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-8">
-        <div className="border border-[#e2ddd4] bg-white/50 px-6 py-7">
-          <p className="eyebrow">Before we talk</p>
-          <p className="mt-3 max-w-[64ch] text-[15px] leading-relaxed text-[#3a3f46]">
-            Have three things ready and the conversation is twice as useful: one sample export
-            of the data, how often the report is produced, and who reads it. The last one
-            matters most. A report with no named reader is a report nobody uses.
-          </p>
-        </div>
-      </section>
-
-      <section className="mt-12">
-        <div className="flex flex-wrap items-center justify-between gap-6 border-t border-[#14161a] pt-8">
-          <p className="max-w-[42ch] text-[17px] leading-relaxed text-[#2b2f35]">
+      <div className="wrap pb-16 pt-12">
+        <section className="flex flex-wrap items-end justify-between gap-7 border-t border-[#c8a86a] pt-9">
+          <p className="max-w-[42ch] text-[21px] leading-relaxed text-[#33302a]">
             Tell me what the report has to answer, and I will tell you what it takes to build
             it.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-[#14161a] px-5 py-2.5 text-[14px] text-[#fbf9f5] transition-colors hover:bg-[#24405e]"
-          >
-            Let&apos;s connect <span aria-hidden="true">→</span>
+          <Link href="/contact" className="btn-solid shrink-0">
+            Let&apos;s connect
+            <span aria-hidden="true">→</span>
           </Link>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 }
